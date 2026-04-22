@@ -971,61 +971,77 @@ Client
 ### 20.1 Deployment Style
 
 Recommended deployment:
-- Spring Boot application
+- single Spring Boot application (`chatbot-platform`)
 - horizontally scalable stateless runtime nodes
 - persistent DB for config/history/audit
 - vector store externalized
 - model provider integrations externalized by config
 
-### 20.2 Suggested Maven Modules
+### 20.2 Project Structure
+
+The platform is a **single Spring Boot project**. Each architectural layer is a separate top-level package within the same project. There is no multi-module Maven build. All layers compile and run together in one deployable JAR.
 
 ```text
-chatbot-platform-api
-chatbot-platform-core
-chatbot-platform-config
-chatbot-platform-routing
-chatbot-platform-rag
-chatbot-platform-memory
-chatbot-platform-tools
-chatbot-platform-observability
+chatbot-platform/
+  src/
+    main/
+      java/
+        com/chatbot/platform/
+          api/            <- Conversation API layer
+          core/           <- Runtime orchestration and shared domain
+          config/         <- Assistant configuration service
+          routing/        <- Model routing service
+          rag/            <- RAG service
+          memory/         <- Memory strategy layer
+          tools/          <- Tool registry and execution
+          observability/  <- Metrics, tracing, audit
+      resources/
+        application.yml
+  pom.xml
 ```
 
-### 20.3 Module Responsibilities
+### 20.3 Layer Responsibilities
 
-#### `chatbot-platform-api`
-- REST contracts
+#### `api`
+- REST controllers for chat, streaming, history, and assistant metadata endpoints
 - request/response DTOs
+- input validation
 
-#### `chatbot-platform-core`
-- orchestration
-- shared domain interfaces
+#### `core`
+- runtime orchestrator
+- shared domain interfaces and models
+- advisor assembly
+- Spring AI `ChatClient` execution
 
-#### `chatbot-platform-config`
-- config repositories
-- assistant config resolution
+#### `config`
+- assistant configuration repositories
+- prompt template resolution
+- policy loading and caching
 
-#### `chatbot-platform-routing`
-- complexity evaluation
-- model selection
+#### `routing`
+- request complexity classification
+- model selection and policy evaluation
+- fallback chain logic
 
-#### `chatbot-platform-rag`
-- KB registry
+#### `rag`
+- knowledge base registry
 - retriever resolution
-- retrieval auditing
+- retrieval execution and auditing
 
-#### `chatbot-platform-memory`
-- memory strategies
-- history persistence
+#### `memory`
+- memory strategy selection and execution
+- in-memory and DB-backed memory implementations
+- chat history persistence
 
-#### `chatbot-platform-tools`
-- tool registry
-- tool adapters
-- future MCP integration
+#### `tools`
+- tool registry and allowlist resolution
+- tool adapters for local Spring beans and internal APIs
+- future MCP integration point
 
-#### `chatbot-platform-observability`
-- metrics
-- tracing
-- policy audit integration
+#### `observability`
+- metrics collection and export
+- distributed tracing spans
+- policy and execution audit logging
 
 ---
 
