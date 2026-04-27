@@ -25,7 +25,7 @@ These rules apply to **every phase**:
 
 # Phase 0 — Project Scaffolding and Baseline Bootstrapping
 
-**Status:** Pending
+**Status:** Completed
 
 ## Goal
 
@@ -1031,7 +1031,7 @@ Stabilize the platform for release through non-functional validation, cleanup, a
 
 | Phase | Name | Status |
 |---|---|---|
-| 0 | Project Scaffolding and Baseline Bootstrapping | Pending |
+| 0 | Project Scaffolding and Baseline Bootstrapping | Completed |
 | 1 | Persistence Layer (Spring Data JPA Foundation) | Pending |
 | 2 | Config Layer | Pending |
 | 3 | Prompt Assembly Layer | Pending |
