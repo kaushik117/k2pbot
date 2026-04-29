@@ -30,7 +30,7 @@ The design follows a **single Maven project** approach, with each major layer im
 # 2. Package Structure
 
 ```text
-com.yourcompany.ai.chatbot
+com.k2pbot.ai.chatbot
 ├── config
 ├── orchestration
 ├── prompt
@@ -78,7 +78,7 @@ It does **not** execute:
 ## 3.2 Package Structure
 
 ```text
-com.yourcompany.ai.chatbot.config
+com.k2pbot.ai.chatbot.config
 ├── api
 ├── model
 ├── entity
@@ -393,7 +393,7 @@ It does **not**:
 ## 4.2 Package Structure
 
 ```text
-com.yourcompany.ai.chatbot.orchestration
+com.k2pbot.ai.chatbot.orchestration
 ├── api
 ├── model
 ├── service
@@ -687,7 +687,7 @@ It produces a model-ready prompt result.
 ## 5A.2 Package Structure
 
 ```text
-com.yourcompany.ai.chatbot.prompt
+com.k2pbot.ai.chatbot.prompt
 ├── api
 ├── model
 ├── service
@@ -895,7 +895,7 @@ The Model Routing Layer selects the best provider, model, and execution options 
 ## 5B.2 Package Structure
 
 ```text
-com.yourcompany.ai.chatbot.modelrouting
+com.k2pbot.ai.chatbot.modelrouting
 ├── api
 ├── model
 ├── service
@@ -1097,7 +1097,7 @@ Implementation uses **Spring Data JPA**.
 ## 6.2 Package Structure
 
 ```text
-com.yourcompany.ai.chatbot.persistence
+com.k2pbot.ai.chatbot.persistence
 ├── entity
 ├── repository
 ├── projection
@@ -1697,7 +1697,7 @@ It standardizes:
 ## 7.2 Package Structure
 
 ```text
-com.yourcompany.ai.chatbot.web
+com.k2pbot.ai.chatbot.web
 ├── controller
 ├── dto
 │   ├── request

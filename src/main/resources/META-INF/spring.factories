@@ -1,0 +1,2 @@
+org.springframework.boot.sql.init.dependency.DatabaseInitializerDetector=\
+com.k2bot.ai.chatbot.persistence.config.LiquibaseDatabaseInitializerDetector
