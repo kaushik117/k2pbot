@@ -272,7 +272,7 @@ Implement the relational persistence foundation using Spring Data JPA, including
 
 # Phase 2 — Config Layer
 
-**Status:** Pending
+**Status:** Completed
 
 ## Goal
 
@@ -1033,7 +1033,7 @@ Stabilize the platform for release through non-functional validation, cleanup, a
 |---|---|---|
 | 0 | Project Scaffolding and Baseline Bootstrapping | Completed |
 | 1 | Persistence Layer (Spring Data JPA Foundation) | Completed |
-| 2 | Config Layer | Pending |
+| 2 | Config Layer | Completed |
 | 3 | Prompt Assembly Layer | Pending |
 | 4 | Model Routing Layer | Pending |
 | 5 | Memory Layer | Pending |

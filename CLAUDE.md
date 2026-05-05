@@ -38,7 +38,7 @@ The project is a **single Maven module** organized by layer/phase into packages:
 | Package | Phase | Status | Purpose |
 |---|---|---|---|
 | `persistence` | 1 | ✅ Done | JPA entities, repositories, services, converters |
-| `config` | 2 | 🔲 Pending | Configuration layer (stub) |
+| `config` | 2 | ✅ Done | Configuration layer — loader, resolver, validator, cache, provider |
 | `prompt` | 3 | 🔲 Pending | Prompt assembly (stub) |
 | `modelrouting` | 4 | 🔲 Pending | LLM model routing & chat options (stub) |
 | `memory` | 5 | 🔲 Pending | Memory strategy abstraction (stub) |

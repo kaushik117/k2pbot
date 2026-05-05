@@ -1,6 +1,11 @@
 package com.k2bot.ai.chatbot.web;
 
 import com.k2bot.ai.chatbot.common.ChatbotException;
+import com.k2bot.ai.chatbot.config.exception.AssistantConfigNotFoundException;
+import com.k2bot.ai.chatbot.config.exception.AssistantConfigResolutionException;
+import com.k2bot.ai.chatbot.config.exception.AssistantConfigValidationException;
+import com.k2bot.ai.chatbot.config.exception.KnowledgeBaseNotFoundException;
+import com.k2bot.ai.chatbot.config.exception.UnauthorizedRuntimeOverrideException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -16,6 +21,36 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
+    @ExceptionHandler(AssistantConfigNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleConfigNotFound(AssistantConfigNotFoundException ex) {
+        log.warn("Assistant config not found: {}", ex.getMessage());
+        return build(HttpStatus.NOT_FOUND, "CONFIG_NOT_FOUND", ex.getMessage());
+    }
+
+    @ExceptionHandler(AssistantConfigValidationException.class)
+    public ResponseEntity<Map<String, Object>> handleConfigValidation(AssistantConfigValidationException ex) {
+        log.warn("Config validation error: {}", ex.getMessage());
+        return build(HttpStatus.UNPROCESSABLE_ENTITY, "CONFIG_INVALID", ex.getMessage());
+    }
+
+    @ExceptionHandler(AssistantConfigResolutionException.class)
+    public ResponseEntity<Map<String, Object>> handleConfigResolution(AssistantConfigResolutionException ex) {
+        log.error("Config resolution error for assistantCode={}", ex.getAssistantCode(), ex);
+        return build(HttpStatus.INTERNAL_SERVER_ERROR, "CONFIG_RESOLUTION_ERROR", ex.getMessage());
+    }
+
+    @ExceptionHandler(KnowledgeBaseNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleKnowledgeBaseNotFound(KnowledgeBaseNotFoundException ex) {
+        log.warn("Knowledge base not found: {}", ex.getMessage());
+        return build(HttpStatus.NOT_FOUND, "CONFIG_NOT_FOUND", ex.getMessage());
+    }
+
+    @ExceptionHandler(UnauthorizedRuntimeOverrideException.class)
+    public ResponseEntity<Map<String, Object>> handleUnauthorizedOverride(UnauthorizedRuntimeOverrideException ex) {
+        log.warn("Unauthorized runtime override: {}", ex.getMessage());
+        return build(HttpStatus.FORBIDDEN, "INVALID_REQUEST", ex.getMessage());
+    }
 
     @ExceptionHandler(ChatbotException.class)
     public ResponseEntity<Map<String, Object>> handleChatbotException(ChatbotException ex) {
