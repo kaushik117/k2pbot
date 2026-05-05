@@ -367,7 +367,7 @@ Implement the configuration layer that loads, validates, resolves, caches, and s
 
 # Phase 3 — Prompt Assembly Layer
 
-**Status:** Pending
+**Status:** Completed
 
 ## Goal
 
@@ -1034,7 +1034,7 @@ Stabilize the platform for release through non-functional validation, cleanup, a
 | 0 | Project Scaffolding and Baseline Bootstrapping | Completed |
 | 1 | Persistence Layer (Spring Data JPA Foundation) | Completed |
 | 2 | Config Layer | Completed |
-| 3 | Prompt Assembly Layer | Pending |
+| 3 | Prompt Assembly Layer | Completed |
 | 4 | Model Routing Layer | Pending |
 | 5 | Memory Layer | Pending |
 | 6 | RAG Layer | Pending |

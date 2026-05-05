@@ -39,13 +39,13 @@ The project is a **single Maven module** organized by layer/phase into packages:
 |---|---|---|---|
 | `persistence` | 1 | ✅ Done | JPA entities, repositories, services, converters |
 | `config` | 2 | ✅ Done | Configuration layer — loader, resolver, validator, cache, provider |
-| `prompt` | 3 | 🔲 Pending | Prompt assembly (stub) |
-| `modelrouting` | 4 | 🔲 Pending | LLM model routing & chat options (stub) |
+| `prompt` | 3 | ✅ Done | Prompt assembly — variable resolution, template rendering, instruction composition, validation |
+| `modelrouting` | 4 | 🔲 Pending | LLM model routing & chat options (stub — `ModelSelectionResult` added) |
 | `memory` | 5 | 🔲 Pending | Memory strategy abstraction (stub) |
 | `rag` | 6 | 🔲 Pending | RAG & knowledge base integration (stub) |
 | `tools` | 7 | 🔲 Pending | Tool registry & execution (stub) |
 | `audit` | 8 | 🔲 Pending | Execution audit & observability (stub) |
-| `orchestration` | 9 | 🔲 Pending | Runtime orchestration (stub) |
+| `orchestration` | 9 | 🔲 Pending | Runtime orchestration (stub — `ChatRequest` added) |
 | `web` | — | ✅ Done | REST controllers + global exception handler |
 | `common` | — | ✅ Done | `ChatbotException` and shared utilities |
 
