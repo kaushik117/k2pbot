@@ -445,7 +445,7 @@ Implement prompt assembly from templates, runtime variables, guardrails, tool in
 
 # Phase 4 — Model Routing Layer
 
-**Status:** Pending
+**Status:** Completed
 
 ## Goal
 
@@ -525,7 +525,7 @@ Implement policy-driven model routing and chat options selection.
 
 # Phase 5 — Memory Layer
 
-**Status:** Pending
+**Status:** Completed
 
 ## Goal
 
@@ -1035,8 +1035,8 @@ Stabilize the platform for release through non-functional validation, cleanup, a
 | 1 | Persistence Layer (Spring Data JPA Foundation) | Completed |
 | 2 | Config Layer | Completed |
 | 3 | Prompt Assembly Layer | Completed |
-| 4 | Model Routing Layer | Pending |
-| 5 | Memory Layer | Pending |
+| 4 | Model Routing Layer | Completed |
+| 5 | Memory Layer | Completed |
 | 6 | RAG Layer | Pending |
 | 7 | Tools Layer | Pending |
 | 8 | Audit and Observability Layer | Pending |

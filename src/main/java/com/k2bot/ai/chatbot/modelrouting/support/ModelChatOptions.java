@@ -1,16 +1,13 @@
-package com.k2bot.ai.chatbot.modelrouting.model;
+package com.k2bot.ai.chatbot.modelrouting.support;
 
-public class ModelSelectionResult {
+public class ModelChatOptions {
 
     private String provider;
-    private String modelName;
+    private String model;
     private Double temperature;
     private Integer maxInputTokens;
     private Integer maxOutputTokens;
     private boolean streamingEnabled;
-    private String routeName;
-    private String selectionReason;
-    private FallbackSelection fallback;
 
     public String getProvider() {
         return provider;
@@ -20,12 +17,12 @@ public class ModelSelectionResult {
         this.provider = provider;
     }
 
-    public String getModelName() {
-        return modelName;
+    public String getModel() {
+        return model;
     }
 
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public Double getTemperature() {
@@ -58,29 +55,5 @@ public class ModelSelectionResult {
 
     public void setStreamingEnabled(boolean streamingEnabled) {
         this.streamingEnabled = streamingEnabled;
-    }
-
-    public String getRouteName() {
-        return routeName;
-    }
-
-    public void setRouteName(String routeName) {
-        this.routeName = routeName;
-    }
-
-    public String getSelectionReason() {
-        return selectionReason;
-    }
-
-    public void setSelectionReason(String selectionReason) {
-        this.selectionReason = selectionReason;
-    }
-
-    public FallbackSelection getFallback() {
-        return fallback;
-    }
-
-    public void setFallback(FallbackSelection fallback) {
-        this.fallback = fallback;
     }
 }

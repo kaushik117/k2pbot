@@ -40,8 +40,8 @@ The project is a **single Maven module** organized by layer/phase into packages:
 | `persistence` | 1 | ✅ Done | JPA entities, repositories, services, converters |
 | `config` | 2 | ✅ Done | Configuration layer — loader, resolver, validator, cache, provider |
 | `prompt` | 3 | ✅ Done | Prompt assembly — variable resolution, template rendering, instruction composition, validation |
-| `modelrouting` | 4 | 🔲 Pending | LLM model routing & chat options (stub — `ModelSelectionResult` added) |
-| `memory` | 5 | 🔲 Pending | Memory strategy abstraction (stub) |
+| `modelrouting` | 4 | ✅ Done | LLM model routing — `HeuristicRequestClassifier`, `DefaultRoutingPolicyEvaluator`, `DefaultModelRoutingService`, `ChatOptionsFactory` |
+| `memory` | 5 | ✅ Done | Memory strategy abstraction — `ChatMemory`, `ChatMemoryAdvisor`, `MemoryAdvisorFactory`, IN_MEMORY and JDBC strategies |
 | `rag` | 6 | 🔲 Pending | RAG & knowledge base integration (stub) |
 | `tools` | 7 | 🔲 Pending | Tool registry & execution (stub) |
 | `audit` | 8 | 🔲 Pending | Execution audit & observability (stub) |

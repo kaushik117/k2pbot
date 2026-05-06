@@ -1,5 +1,7 @@
 package com.k2bot.ai.chatbot.orchestration.model;
 
+import com.k2bot.ai.chatbot.config.model.RuntimeConfigOverride;
+
 import java.util.Map;
 
 public class ChatRequest {
@@ -12,6 +14,7 @@ public class ChatRequest {
     private String locale;
     private String channel;
     private Map<String, Object> context;
+    private RuntimeConfigOverride runtimeOverride;
 
     public String getAssistantCode() {
         return assistantCode;
@@ -75,5 +78,13 @@ public class ChatRequest {
 
     public void setContext(Map<String, Object> context) {
         this.context = context;
+    }
+
+    public RuntimeConfigOverride getRuntimeOverride() {
+        return runtimeOverride;
+    }
+
+    public void setRuntimeOverride(RuntimeConfigOverride runtimeOverride) {
+        this.runtimeOverride = runtimeOverride;
     }
 }
